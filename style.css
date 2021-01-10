@@ -3,7 +3,6 @@
   --text-hint: rgba(38, 47, 56, 0.6);
   --link-hover: #465461;
   --bg-main: #f8f8f8;
-  --bg-page: #1f90db;
   --bg-page: #f25f46;
 }
 
@@ -16,24 +15,24 @@
 
 body {
   background-color: var(--bg-main);
-  font-family: 'Lato', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   color: var(--text-primary);
 }
 
 h1 {
-  font-family: 'Karla', sans-serif;
-  font-weight: bold;
-  font-size: 72px;
-  line-height: 84px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 86px;
   letter-spacing: -0.06em;
 }
 
 h2 {
-  font-family: 'Karla', sans-serif;
-  font-weight: bold;
-  font-size: 56px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 54px;
   line-height: 64px;
   letter-spacing: -0.06em;
 }
@@ -50,23 +49,20 @@ p {
   white-space: nowrap;
   vertical-align: middle;
   padding: 16px 28px;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 18px;
   line-height: 24px;
 }
-
 .button__label {
   display: flex;
   align-items: center;
 }
-
 .button__icon {
   display: inline-block;
   margin-right: 12px;
   width: 24px;
   height: 24px;
 }
-
 .button__svg {
   display: inline-block;
   fill: currentColor;
@@ -94,25 +90,28 @@ p {
   height: 120px;
 }
 
+.brand {
+  position: relative;
+  font-size: 22px;
+  line-height: 29px;
+  color: rgba(38, 47, 56, 0.9);
+}
+.brand::before {
+  content: url(assets/images/brand.svg);
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: -15px;
+  width: 45px;
+  height: 46px;
+  z-index: -1;
+}
+
 .greetings {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding-top: 10%;
-}
-
-.brand__link {
-  font-size: 24px;
-  line-height: 29px;
-  letter-spacing: 0.01em;
-  color: rgba(38, 47, 56, 0.9);
-}
-
-.mail_link {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 29px;
-  color: var(--text-primary);
 }
 
 .send_email {
@@ -122,6 +121,14 @@ p {
   border-radius: 16px;
   line-height: 24px;
   color: #fff;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.send_email:hover {
+  transform: translateY(-2px);
+}
+.send_email:active {
+  box-shadow: 0px 2px 0px #161D24;
+  transform: translateY(0);
 }
 
 .section_greetings__bg {
@@ -133,7 +140,7 @@ p {
   width: 100%;
   height: 100%;
   background-color: var(--bg-page);
-  z-index: -2;
+  z-index: -100;
 }
 .section_greetings__bg-l {
   position: absolute;
@@ -143,7 +150,7 @@ p {
   height: 850px;
   border-radius: 50%;
   background-color: var(--bg-main);
-  z-index: -1;
+  z-index: -80;
 }
 .section_greetings__bg-r {
   position: absolute;
@@ -152,7 +159,7 @@ p {
   width: 300px;
   height: 300px;
   background-color: var(--bg-main);
-  z-index: -1;
+  z-index: -80;
   clip-path: ellipse(300px 300px at 100% 100%);
 }
 
@@ -161,6 +168,7 @@ p {
   flex-direction: column;
   justify-content: space-between;
   padding-top: 40px;
+  padding-bottom: 50px;
 }
 
 .work_list {
@@ -184,29 +192,18 @@ p {
   display: flex;
   align-items: center;
   margin: 0 auto;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 18px;
   line-height: 24px;
   color: var(--text-primary);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
-
+.github_link:hover {
+  color: var(--link-hover);
+}
 .github_link > svg {
   fill: currentColor;
   width: 1.4em;
   height: 1.4em;
   margin-left: 12px;
-}
-
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
-}
-
-.copy {
-  font-size: 14px;
-  line-height: 17px;
-  letter-spacing: 0.01em;
-  color: var(--text-hint);
 }
