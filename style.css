@@ -1,7 +1,8 @@
 :root {
-  --text-primary: #262f38;
+  --text-primary: rgba(20, 20, 20, 0.9);
+  --text-primary--big: #282828;
+  --main: #262f38;
   --text-hint: rgba(38, 47, 56, 0.6);
-  --link-hover: #465461;
   --bg-main: #f8f8f8;
   --bg-page: #f25f46;
 }
@@ -27,6 +28,7 @@ h1 {
   font-size: 70px;
   line-height: 86px;
   letter-spacing: -0.06em;
+  color: var(--text-primary--big);
 }
 
 h2 {
@@ -35,6 +37,7 @@ h2 {
   font-size: 54px;
   line-height: 64px;
   letter-spacing: -0.06em;
+  color: var(--text-primary--big);
 }
 
 p {
@@ -78,10 +81,7 @@ p {
   scroll-behavior: smooth;
 }
 
-.section {
-  height: 100vh;
-  scroll-snap-align: start;
-}
+.section { height: 100vh; }
 
 .header {
   display: flex;
@@ -92,9 +92,9 @@ p {
 
 .brand {
   position: relative;
-  font-size: 22px;
-  line-height: 29px;
-  color: rgba(38, 47, 56, 0.9);
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--text-primary);
 }
 .brand::before {
   content: url(assets/images/brand.svg);
@@ -116,18 +116,16 @@ p {
 
 .send_email {
   margin-top: 46px;
-  background: var(--text-primary);
-  box-shadow: 0px 6px 0px #161D24;
+  background: var(--main);
+  box-shadow: 0 6px 0 #161D24;
   border-radius: 16px;
   line-height: 24px;
   color: #fff;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
-.send_email:hover {
-  transform: translateY(-2px);
-}
+.send_email:hover { transform: translateY(-2px); }
 .send_email:active {
-  box-shadow: 0px 2px 0px #161D24;
+  box-shadow: 0 2px 0 #161D24;
   transform: translateY(0);
 }
 
@@ -162,6 +160,16 @@ p {
   z-index: -80;
   clip-path: ellipse(300px 300px at 100% 100%);
 }
+.section_greetings__bg-t {
+  position: absolute;
+  top: -150px;
+  left: 90px;
+  width: 200px;
+  height: 300px;
+  border-radius: 100px;
+  background-color: var(--bg-page);
+  z-index: -80;
+}
 
 .section_works {
   display: flex;
@@ -179,7 +187,7 @@ p {
   padding: 36px 0;
 }
 .work_card {
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 3px -2px, rgba(0, 0, 0, 0.14) 0 3px 4px 0, rgba(0, 0, 0, 0.12) 0 1px 8px 0;
   border-radius: 16px;
 }
 .work_card__img {
@@ -198,9 +206,7 @@ p {
   color: var(--text-primary);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
-.github_link:hover {
-  color: var(--link-hover);
-}
+.github_link:hover { color: var(--main); }
 .github_link > svg {
   fill: currentColor;
   width: 1.4em;
