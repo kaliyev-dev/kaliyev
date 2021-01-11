@@ -1,7 +1,7 @@
 :root {
+  --main: #262f38;
   --text-primary: rgba(20, 20, 20, 0.9);
   --text-primary--big: #282828;
-  --main: #262f38;
   --text-hint: rgba(38, 47, 56, 0.6);
   --bg-main: #f8f8f8;
   --bg-page: #f25f46;
